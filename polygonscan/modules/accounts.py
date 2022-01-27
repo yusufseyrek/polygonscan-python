@@ -23,22 +23,6 @@ class Accounts:
         return url
 
     @staticmethod
-    def get_hist_erc20_token_account_balance_for_token_contract_address_by_block_no(token_address: str, contract_address: str, block: int) -> str:
-        url = (
-            f"{fields.MODULE}"
-            f"{modules.ACCOUNT}"
-            f"{fields.ACTION}"
-            f"{actions.TOKEN_BALANCE_HISTORY}"
-            f"{fields.CONTRACT_ADDRESS}"
-            f"{contract_address}"
-            f"{fields.ADDRESS}"
-            f"{token_address}"
-            f"{fields.BLOCKNO}"
-            f"{block}"
-        )
-        return url
-
-    @staticmethod
     def get_matic_balance_multiple(addresses: List[str]) -> str:
         # NOTE: Max 20 wallets at a time
         address_list = reduce(lambda w1, w2: str(w1) +
@@ -341,5 +325,21 @@ class Accounts:
             f"{str(page)}"
             f"{fields.OFFSET}"
             f"{str(offset)}"
+        )
+        return url
+
+    @staticmethod
+    def get_hist_erc20_token_account_balance_for_token_contract_address_by_block_no(token_address: str, contract_address: str, block_no: int) -> str:
+        url = (
+            f"{fields.MODULE}"
+            f"{modules.ACCOUNT}"
+            f"{fields.ACTION}"
+            f"{actions.TOKEN_BALANCE_HISTORY}"
+            f"{fields.CONTRACT_ADDRESS}"
+            f"{contract_address}"
+            f"{fields.ADDRESS}"
+            f"{token_address}"
+            f"{fields.BLOCKNO}"
+            f"{block_no}"
         )
         return url

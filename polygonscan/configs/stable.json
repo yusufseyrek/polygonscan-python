@@ -286,5 +286,13 @@
       "page": 1,
       "offset": 100
     }
+  },
+  "get_hist_erc20_token_account_balance_for_token_contract_address_by_block_no": {
+    "module": "accounts",
+    "kwargs": {
+      "token_address": "0x9dd134d14d1e65f84b706d6f205cd5b1cd03a46b",
+      "contract_address": "0x57d90b64a1a57749b0f932f1a3395792e12e7055",
+      "block_no": "2165403"
+    }
   }
 }
